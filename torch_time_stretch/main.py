@@ -87,8 +87,7 @@ def time_stretch(
     input: torch.Tensor [shape=(batch_size, channels, samples)]
         Input audio clips of shape (batch_size, channels, samples)
     stretch: float OR Fraction
-        `float`: Amount to time-stretch in # of bins. (1 bin == 1 semitone if `bins_per_octave` == 12)
-        `Fraction`: A `fractions.Fraction` object indicating the stretch ratio. Usually an element in `get_fast_stretches()`.
+        Indicates the stretch ratio. Usually an element in `get_fast_stretches()`.
     sample_rate: int
         The sample rate of the input audio clips.
     n_fft: int [optional]

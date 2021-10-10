@@ -86,7 +86,7 @@ Stretch a batch of waveforms by a given amount without altering the pitch.
       <td>Yes</td>
       <td></td>
       <td><code>float</code> or <code>Fraction</code></td>
-      <td>Inputs of type <code>float</code> indicate the amount to time-stretch in # of bins (where 1 bin == 1 semitone if <code>bins_per_octave</code> == 12). Inputs of type <code>Fraction</code> indicate a time-stretch ratio (usually an element in <code>get_fast_stretches()</code>).</td>
+      <td>Indicates the stretch ratio (usually an element in <code>get_fast_stretches()</code>).</td>
     </tr>
     <tr>
       <td><code>sample_rate</code></td>

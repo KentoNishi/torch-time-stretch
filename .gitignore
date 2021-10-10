@@ -1,6 +1,6 @@
 __pycache__
 .vscode
-shifted*.wav
+stretched*.wav
 *.egg-info
 build
 dist
