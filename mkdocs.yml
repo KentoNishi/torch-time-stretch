@@ -1,0 +1,8 @@
+site_name: Torch Time Stretch Docs
+site_url: https://kentonishi.github.io/torch-time-stretch/
+nav:
+  - About: index.md
+  - Usage: usage.md
+theme: readthedocs
+extra_css:
+  - index.css
