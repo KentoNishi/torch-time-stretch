@@ -18,9 +18,8 @@ sample = torch.tensor(
 def test_time_stretch_2_up():
     # speed up by 2 times
     up = time_stretch(sample, Fraction(2, 1), SAMPLE_RATE)
-    assert up.shape == sample.shape
     wavfile.write(
-        "./wavs/shifted_octave_+1.wav",
+        "./wavs/stretched_up_2.wav",
         SAMPLE_RATE,
         np.swapaxes(up.cpu()[0].numpy(), 0, 1).astype(dtype),
     )
@@ -29,9 +28,8 @@ def test_time_stretch_2_up():
 def test_time_stretch_2_down():
     # slow down by 2 times
     down = time_stretch(sample, Fraction(1, 2), SAMPLE_RATE)
-    assert down.shape == sample.shape
     wavfile.write(
-        "./wavs/shifted_octave_-1.wav",
+        "./wavs/stretched_down_2.wav",
         SAMPLE_RATE,
         np.swapaxes(down.cpu()[0].numpy(), 0, 1).astype(dtype),
     )
@@ -41,10 +39,9 @@ def test_time_stretch_to_fast_ratios():
     # get stretch ratios that are fast (between +1 and -1 octaves)
     for ratio in get_fast_stretches(SAMPLE_RATE):
         print("Stretching", ratio)
-        shifted = time_stretch(sample, ratio, SAMPLE_RATE)
-        assert shifted.shape == sample.shape
+        stretched = time_stretch(sample, ratio, SAMPLE_RATE)
         wavfile.write(
             f"./wavs/stretched_ratio_{ratio.numerator}-{ratio.denominator}.wav",
             SAMPLE_RATE,
-            np.swapaxes(shifted.cpu()[0].numpy(), 0, 1).astype(dtype),
+            np.swapaxes(stretched.cpu()[0].numpy(), 0, 1).astype(dtype),
         )

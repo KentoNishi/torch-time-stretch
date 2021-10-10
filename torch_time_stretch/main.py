@@ -117,10 +117,6 @@ def time_stretch(
     output = torch.istft(output[0], n_fft, hop_length)
     # output = resampler(output)
     del stretcher  # , resampler
-    if output.shape[1] >= input.shape[2]:
-        output = output[:, : (input.shape[2])]
-    else:
-        output = pad(output, pad=(0, input.shape[2] - output.shape[1], 0, 0))
 
-    output = output.reshape(batch_size, channels, samples)
+    output = output.reshape(batch_size, channels, output.shape[1])
     return output
