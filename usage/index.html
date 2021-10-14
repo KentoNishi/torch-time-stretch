@@ -205,13 +205,6 @@ from torch_time_stretch import get_fast_stretches, time_stretch
       <td><code>int</code></td>
       <td>Size of FFT. Default <code>sample_rate // 64</code>. Smaller is faster.</td>
     </tr>
-    <tr>
-      <td><code>bins_per_octave</code></td>
-      <td>No</td>
-      <td><code>12</code></td>
-      <td><code>int</code></td>
-      <td>Number of bins per octave. Default is 12.</td>
-    </tr>
   </tbody>
 </table>
 
@@ -266,7 +259,7 @@ from torch_time_stretch import get_fast_stretches, time_stretch
 )</code></pre>
       </td>
       <td><code>Callable</code></td>
-      <td>A function to validate fast stretch ratios. Default value limits computed targets to values between <code>-1</code> and <code>+1</code> octaves.</td>
+      <td>A function to validate fast stretch ratios. Default value limits computed targets to values between <code>50%</code> and <code>200%</code> speed</td>
     </tr>
   </tbody>
 </table>
