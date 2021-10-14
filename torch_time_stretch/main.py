@@ -47,7 +47,7 @@ def get_fast_stretches(
         The sample rate of an audio clip.
     condition: Callable [optional]
         A function to validate fast stretch ratios.
-        Default is `lambda x: x >= 0.5 and x <= 2 and x != 1` (between -1 and +1 octaves).
+        Default is `lambda x: x >= 0.5 and x <= 2 and x != 1` (between 50% and 200% speed).
 
     Returns
     -------

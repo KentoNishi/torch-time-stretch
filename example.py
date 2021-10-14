@@ -36,7 +36,7 @@ def test_time_stretch_2_down():
 
 
 def test_time_stretch_to_fast_ratios():
-    # get stretch ratios that are fast (between +1 and -1 octaves)
+    # get stretch ratios that are fast (between 50% and 200% speed)
     for ratio in get_fast_stretches(SAMPLE_RATE):
         print("Stretching", ratio)
         stretched = time_stretch(sample, ratio, SAMPLE_RATE)
