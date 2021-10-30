@@ -17,7 +17,7 @@ sample = torch.tensor(
 
 def test_time_stretch_2_up():
     # speed up by 2 times
-    up = time_stretch(sample, Fraction(2, 1), SAMPLE_RATE)
+    up = time_stretch(sample, Fraction(1, 2), SAMPLE_RATE)
     wavfile.write(
         "./wavs/stretched_up_2.wav",
         SAMPLE_RATE,
@@ -27,7 +27,7 @@ def test_time_stretch_2_up():
 
 def test_time_stretch_2_down():
     # slow down by 2 times
-    down = time_stretch(sample, Fraction(1, 2), SAMPLE_RATE)
+    down = time_stretch(sample, Fraction(2, 1), SAMPLE_RATE)
     wavfile.write(
         "./wavs/stretched_down_2.wav",
         SAMPLE_RATE,
