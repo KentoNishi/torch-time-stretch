@@ -4,3 +4,4 @@ stretched*.wav
 *.egg-info
 build
 dist
+*.venv
