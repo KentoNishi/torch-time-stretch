@@ -109,7 +109,7 @@ def time_stretch(
     # resampler = T.Resample(sample_rate, int(sample_rate / stretch)).to(input.device)
     output = input
     output = output.reshape(batch_size * channels, samples)
-    output = torch.stft(output, n_fft, hop_length)[None, ...]
+    output = torch.stft(output, n_fft, hop_length, return_complex=True)[None, ...]
     stretcher = T.TimeStretch(
         fixed_rate=float(1 / stretch), n_freq=output.shape[2], hop_length=hop_length
     ).to(input.device)
